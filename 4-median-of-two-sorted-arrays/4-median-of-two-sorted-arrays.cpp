@@ -9,8 +9,8 @@ public:
         if(n % 2 != 0)
             return nums3[n/2];
         else
-        {   double res = (double)( nums3[n/2] + nums3[(n-1)/2] ) / 2;
-            return res;
+        {   
+            return (double)( nums3[n/2] + nums3[(n-1)/2] ) / 2;
         }
         
         return -1;
