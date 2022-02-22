@@ -11,37 +11,37 @@ using namespace std;
 class Solution{
   public:
     
-    //Moore Voting Algorithm
-    
     int majorityElement(int a[], int size)
     {
-        int max = 0, count = 1, maj = 0;
-        
         if(size == 1)
             return a[0];
+            
+        sort(a,a+size);
+            
+        int max = 0, count = 1, maj = a[0], ele;
+        
         
         for(int i=1; i<size; i++)
         {
-            if(a[i] != a[max])
-            count--;
-            
+
+            if(maj == a[i])
+                count++;
+                
             else
-            count++;
-            
-            if(count == 0)
             {
-                max = i;
                 count = 1;
+                maj = a[i];
             }
-            
+                
+            if(max < count)
+            {
+                max = count;
+                ele = a[i];
+                
+                if(max > (size/2))
+                    return ele;
+            }
         }
-        
-        for(int i=0; i<size; i++)
-            if(a[i] == a[max])
-                maj++;
-        
-        if(maj > size/2)
-        return a[max];
         
         return -1;
     }
