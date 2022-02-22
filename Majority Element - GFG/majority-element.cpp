@@ -22,11 +22,11 @@ class Solution{
         
         for(int i=1; i<size; i++)
         {
-            if(a[i] == a[max])
-            count++;
+            if(a[i] != a[max])
+            count--;
             
             else
-            count--;
+            count++;
             
             if(count == 0)
             {
