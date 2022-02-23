@@ -12,26 +12,15 @@ class Solution{
     //Function to return the count of number of elements in union of two arrays.
     int doUnion(int a[], int n, int b[], int m)  {
         //code here
-        vector<int> v;
+        set<int> v;
 
         for(int i=0; i<n; i++)
-        v.push_back(a[i]);
+        v.insert(a[i]);
         
         for(int i=0; i<m; i++)
-        v.push_back(b[i]);
+        v.insert(b[i]);
         
-        sort(v.begin(),v.end());
-        
-        int j = 0;
-        
-        for(int i=0; i<v.size()-1;i++)
-        {
-            if(v[i]!=v[i+1])
-            v[j++] = v[i];
-        }
-        v[j++] = v[v.size()-1];
-        
-        return j;
+        return v.size();
     }
 };
 
