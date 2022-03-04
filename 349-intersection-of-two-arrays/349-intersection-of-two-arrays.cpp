@@ -4,9 +4,8 @@ public:
         unordered_set<int> s(nums1.begin(), nums1.end());
         vector<int> res;
         for (auto a : nums2)
-            if (s.count(a)) {
+            if (s.erase(a)) {
                 res.push_back(a);
-                s.erase(a);
             }
         return res;
     }
