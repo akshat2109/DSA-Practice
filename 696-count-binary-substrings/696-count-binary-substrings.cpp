@@ -9,7 +9,9 @@ public:
                 cur++;
             else
             {
-                res+=min(pre,cur), pre=cur, cur=1;
+                res+=min(pre,cur);
+                pre=cur;
+                cur=1;
             }
         }
         return res + min(pre,cur);
