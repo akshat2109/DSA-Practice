@@ -13,16 +13,15 @@ public:
         if(temp.size()==n*2)
             res.push_back(temp);
         
-        string str="()";
         if(open<n)
         {
-            temp.push_back(str[0]);
+            temp.push_back('(');
             generate(open+1,close,n,temp,res);
             temp.pop_back();
         }
         if(close<open)
         {
-            temp.push_back(str[1]);
+            temp.push_back(')');
             generate(open,close+1,n,temp,res);
             temp.pop_back();
         }
