@@ -12,9 +12,12 @@ public:
     void generate(string digits, int idx, vector<string> &let, string &temp, vector<string> &res)
     {
         if(idx == digits.size())
+        {
             res.push_back(temp);
+            return;
+        }
         
-        else{
+        
             string str = let[digits[idx]-'2'];
             for(int i=0; i<str.size(); i++)
             {
@@ -22,6 +25,6 @@ public:
                 generate(digits, idx+1, let, temp, res);
                 temp.pop_back();
             }
-        }
+        
     }
 };
