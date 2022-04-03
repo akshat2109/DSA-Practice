@@ -9,13 +9,10 @@ public:
         {
             if(locked[i]=='0')
                 unlock++;
-            else 
-            {
-                if(s[i]=='(')
+            else if(s[i]=='(')
                 open++;
-            else
+            else if(s[i]==')')
                 close++;
-            }
             if(close>(unlock+open))
                 return false;
         }
@@ -25,13 +22,10 @@ public:
         {
             if(locked[i]=='0')
                 unlock++;
-            else 
-            {
-                if(s[i]=='(')
+            else if(s[i]=='(')
                 open++;
-            else
+            else if(s[i]==')')
                 close++;
-            }
             if(open>(unlock+close))
                 return false;
         }
