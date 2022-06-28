@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minDeletions(string s) {
-        sort(s.begin(), s.end());
+
         unordered_map<char, int> m;
         set<int> st;
         int res=0;
