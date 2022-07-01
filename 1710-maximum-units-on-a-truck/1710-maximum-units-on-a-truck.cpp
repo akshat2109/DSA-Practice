@@ -1,6 +1,6 @@
 class Solution {
 public:
-    static bool rule(vector<int> a, vector<int> b)
+    static bool rule(vector<int> &a, vector<int> &b)
     {
         return a[1] > b[1];
     }
