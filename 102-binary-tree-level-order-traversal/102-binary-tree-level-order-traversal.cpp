@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void bfs(TreeNode* root, vector<vector<int>>& res, int level)
+    void dfs(TreeNode* root, vector<vector<int>>& res, int level)
     {
         if(root == NULL)
             return ;
@@ -21,12 +21,12 @@ public:
         
         res[level].push_back(root->val);
         
-        bfs(root->left, res, level+1);
-        bfs(root-> right, res, level+1);
+        dfs(root->left, res, level+1);
+        dfs(root-> right, res, level+1);
     }
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> res;
-        bfs(root, res, 0);
+        dfs(root, res, 0);
         return res;
     }
 };
