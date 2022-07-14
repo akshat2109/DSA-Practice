@@ -12,7 +12,7 @@ public:
             
             int j = i ;
             while ( --j >= 0) 
-                if ( allSide[i] == allSide[j])
+                if (allSide[i] == allSide[j])
                     break;
             
             if ( j != -1 ) continue ;
