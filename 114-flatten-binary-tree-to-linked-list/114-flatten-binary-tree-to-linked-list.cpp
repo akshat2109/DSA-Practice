@@ -12,24 +12,22 @@
 class Solution {
 public:
     void flatten(TreeNode* root) {
-        if(root == NULL || root->left == NULL && root->right == NULL)
-            return;
+        //Morris Traversal
+        TreeNode* cur = root;
         
-        if(root->left)
+        while(cur)
         {
-            flatten(root->left);
-            
-            TreeNode* temp = root->right;
-            root->right = root->left;
-            root->left = NULL;
-            
-            TreeNode* tail = root->right;
-            while(tail->right)
-                tail = tail->right;
-            
-            tail->right = temp;
+            if(cur->left)
+            {
+                TreeNode* temp = cur->left;
+                while(temp->right)
+                    temp = temp->right;
+                
+                temp->right = cur->right;
+                cur->right = cur->left;
+                cur->left = NULL;
+            }
+            cur = cur->right;
         }
-        
-        flatten(root->right);
     }
 };
