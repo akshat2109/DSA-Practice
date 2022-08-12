@@ -19,7 +19,7 @@ public:
             temp = temp->next;
         }
         size = size - n;
-        ListNode* dummy = new ListNode(0);
+        ListNode* dummy = new ListNode();
         dummy->next = head;
         ListNode* prev = dummy;
         
