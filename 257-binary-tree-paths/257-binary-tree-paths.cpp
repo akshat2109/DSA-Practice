@@ -13,7 +13,8 @@ class Solution {
 public:
     vector<string> res;
     void tree(TreeNode* root, string t) {
-        
+        if(!root)
+            return;
         t += to_string(root->val);
         if(!root->left && !root->right) {
             res.push_back(t);
@@ -21,10 +22,10 @@ public:
         }
         
         t += "->";
-        if(root->left)
+        //if(root->left)
         tree(root->left, t);
         
-        if(root->right)
+        //if(root->right)
         tree(root->right, t);
         
     }
