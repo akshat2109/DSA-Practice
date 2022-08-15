@@ -3,8 +3,8 @@ public:
     int combinationSum4(vector<int>& candidates, int target) {
         
         vector<int> dp(target+1,-1);
-        helper(candidates,target,dp);
-        return dp[target];
+        return helper(candidates,target,dp);
+        
  
     }
     int helper(vector<int>& candidates, int target, vector<int>& dp)
