@@ -17,7 +17,7 @@ public:
     }
     
     int twoEggDrop(int n) {
-        dp.resize(n+1, vector<int>(n+1,-1));
+        dp.resize(n+1, vector<int>(3,-1));
         return helper(n, 2);
     }
 };
