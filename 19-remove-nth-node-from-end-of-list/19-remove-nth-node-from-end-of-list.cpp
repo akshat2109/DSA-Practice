@@ -25,9 +25,8 @@ public:
         
         while(size--)
             prev = prev->next;
-        
         prev->next = prev->next->next;
-        
+
         return dummy->next;
     }
 };
