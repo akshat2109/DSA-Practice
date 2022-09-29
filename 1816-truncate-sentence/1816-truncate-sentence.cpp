@@ -2,20 +2,17 @@ class Solution {
 public:
     string truncateSentence(string s, int k) {
         
-        string res, t;
+        string res;
         int f = 0;
-        for(int i=0; i<s.length(); i++) {
-            if(isspace(s[i])) {
-                res += t;
-                t = "";
+        for(auto i: s) {
+            if(isspace(i))
                 f++;
-                if(f == k)
-                    break;
-            }
-            
-            t += s[i];
+                
+            if(f==k)
+                break;
+                
+            res += i;
         }
-        res += t;
         return res;
     }
 };
