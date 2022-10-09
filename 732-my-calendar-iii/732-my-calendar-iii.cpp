@@ -8,8 +8,8 @@ public:
         int cur = 0, res = 0;
         diff[start]++;
         diff[end]--;
-        for (auto& [_, delta] : diff) {
-            cur += delta;
+        for (auto& x: diff) {
+            cur += x.second;
             res = max(res, cur);
         }
         return res;
